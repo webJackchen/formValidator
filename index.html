@@ -69,13 +69,7 @@
         title:"短信验证码",
         objArr:objArr
     })
-    var d7 = new $.FormValidator();
-    d7.init({
-        id:"card",
-        title:"身份证号",
-        objArr:objArr,
-        isIdCar:true
-    })
+
     var d3 = new $.FormValidator();
     d3.init({
         id:"R_password",
@@ -115,26 +109,22 @@
         R_obj:d5,
         successFn:function(){alert(8888);}
     })
-<<<<<<< HEAD
+    var d7 = new $.FormValidator();
+    d7.init({
+        id:"card",
+        title:"身份证号",
+        objArr:objArr,
+        isIdCar:true
+    })
 
-
+    //    var pwdArr = [$("#R_password"),$("#R_repeatPassword")],
+    //        pwdPromptText = ["密码不能不填","你是逗比么？"];
     //表单提交
     $("#R_submit").click(function(){
         $("input[data-empty = 'true']").addClass("form_warning_prompt");
         if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
             $("#form").submit();
         }
-=======
-    var pwdArr = [$("#R_password"),$("#R_repeatPassword")],
-        pwdPromptText = ["密码不能不填","你是逗比么？"];
-        
-        //表单提交
-    $("#R_submit").click(function(){
-        $("input[data-empty = 'true']").addClass("form_warning_prompt");
-        if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
-          $("#form").submit();
-    }
     })
->>>>>>> origin/gh-pages
 </script>
 </html>
