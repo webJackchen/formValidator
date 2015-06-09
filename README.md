@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>演示demo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<form>
+
+ [插件名称] jQuery formValidator-简易版
+ [描    述] jQuery formValidator表单验证插件，它是基于jQuery类库，实现了js脚本于页面的分离。本插件内置模拟placeholde
+  效果，调用方便，采用参数配置的思想，将错误提示信息放于输入框内。内置身份证号码验证规则，更改样式较方便灵活。
+ [作者网名] webkackchen（阿飞）
+ [邮    箱] webkackchen@163.com
+ [QQ交流] 602071930
+ [版 本 号] ver0.0.1
+
+html
+
+<form id="form">
     <div>
         <input type="text" id="R_userPhone" data-empty="true" validation-type="电话号码" data-type="text"/>
     </div>
@@ -24,8 +27,6 @@
         <input id="R_repeatPassword" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
         <input value="请确认密码" data-empty="true" type="text"/>
     </div>
-
-
     <div>
         <input id="R_pay" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
         <input type="text" data-empty="true" value="请创建密码"/>
@@ -39,7 +40,13 @@
     </div>
 </form>
 
-</body>
+其中自定义属性解释：
+data-empty：对象是否无值，默认为true；验证成功后该属性自动移除
+data-type：是否是type：text   类型
+validation-type：验证规则采用类型
+
+
+js调用部分
 <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="formValidator.js"></script>
 <script type="text/javascript">
@@ -60,7 +67,7 @@
         id:"R_userPhone",
         title:"电话号码",
         objArr:objArr,
-        successFn:function(){alert("d1.pass = " + d1.pass);},
+        successFn:function(){alert("d1.pass" + d1.pass);},
         failureFn:function(){alert("验证失败的回调，失败时触发。。。")}
     })
     var d2 = new $.FormValidator();
@@ -69,13 +76,7 @@
         title:"短信验证码",
         objArr:objArr
     })
-    var d7 = new $.FormValidator();
-    d7.init({
-        id:"card",
-        title:"身份证号",
-        objArr:objArr,
-        isIdCar:true
-    })
+
     var d3 = new $.FormValidator();
     d3.init({
         id:"R_password",
@@ -115,26 +116,25 @@
         R_obj:d5,
         successFn:function(){alert(8888);}
     })
-<<<<<<< HEAD
 
 
-    //表单提交
-    $("#R_submit").click(function(){
-        $("input[data-empty = 'true']").addClass("form_warning_prompt");
-        if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
-            $("#form").submit();
-        }
-=======
-    var pwdArr = [$("#R_password"),$("#R_repeatPassword")],
-        pwdPromptText = ["密码不能不填","你是逗比么？"];
-        
-        //表单提交
+    var d7 = new $.FormValidator();
+    d7.init({
+        id:"card",
+        title:"身份证号",
+        objArr:objArr,
+        isIdCar:true
+    })
+    
+    验证通过后对应的对象pass属性为true；
+    提交数据时通过判断对应的表单对象的pass属性
+    
+    
     $("#R_submit").click(function(){
         $("input[data-empty = 'true']").addClass("form_warning_prompt");
         if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
           $("#form").submit();
-    }
+        }
     })
->>>>>>> origin/gh-pages
-</script>
-</html>
+
+    具体效果请看demo
