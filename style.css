@@ -1,0 +1,44 @@
+.disNone{display: none;}
+/*所有输入框样式定义*/
+input{
+    width: 310px;
+    height: 29px;
+    border-radius: 3px;
+    padding: 11px 10px 10px;
+    color: #999999;
+    border:1px solid #e9e9e9;
+    margin-bottom: 10px;
+}
+/*按钮样式*/
+.btn{
+    width: 333px;
+    height: 50px;
+    color: #fff;
+    background-color: #0096dd;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/*表单验证样式*/
+.form_error_prompt{
+    border: 1px solid #eb6100;
+    background-color: #fff9f9;
+    color:#e53938;
+    font-size: 14px;
+}
+.form_success_prompt{
+    background-image: url("img/icon.png");
+    background-position:95% -200px;
+    background-repeat: no-repeat;
+}
+.form_warning_prompt{
+    color: #e53938;
+}
+.input_focus{
+    color: #374259;
+}
+.form_loading{
+    background-image: url("img/loading.gif");
+    background-position:95% center;
+}
