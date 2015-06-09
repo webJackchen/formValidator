@@ -1,13 +1,13 @@
 
-// [插件名称] jQuery formValidator-简易版
-// [描    述] jQuery formValidator表单验证插件，它是基于jQuery类库，实现了js脚本于页面的分离。本插件内置模拟placeholde
-//  效果，调用方便，采用参数配置的思想，将错误提示信息放于输入框内。内置身份证号码验证规则，更改样式较方便灵活。
-// [作者网名] webkackchen（阿飞）
-// [邮    箱] webkackchen@163.com
-// [QQ交流] 602071930
-// [版 本 号] ver0.0.1
+ [插件名称] jQuery formValidator-简易版
+ [描    述] jQuery formValidator表单验证插件，它是基于jQuery类库，实现了js脚本于页面的分离。本插件内置模拟placeholde
+  效果，调用方便，采用参数配置的思想，将错误提示信息放于输入框内。内置身份证号码验证规则，更改样式较方便灵活。
+ [作者网名] webkackchen（阿飞）
+ [邮    箱] webkackchen@163.com
+ [QQ交流] 602071930
+ [版 本 号] ver0.0.1
 
-html-------------------
+html
 
 <form id="form">
     <div>
@@ -46,7 +46,7 @@ data-type：是否是type：text   类型
 validation-type：验证规则采用类型
 
 
-js调用部分------------------------------
+js调用部分
 <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="formValidator.js"></script>
 <script type="text/javascript">
