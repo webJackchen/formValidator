@@ -55,13 +55,6 @@
     $.placeHolder.pwdPlaceHolder([$("#R_password"),$("#R_repeatPassword"),$("#R_pay"),$("#R_repeatpay")]);//密码框初始化数据
 
 
-    $("#R_submit").click(function(){
-        $("input[data-empty = 'true']").addClass("form_warning_prompt");
-        $.placeHolder.pwdRecover(pwdArr,pwdPromptText);//重置密码框内容演示
-    })
-    function a(){
-        alert("我验证成功了，接下来要做什么！");
-    }
     var d1 = new $.FormValidator();
     d1.init({//必配参数：id-验证对象的id    title：验证对象的名称      objArr-里面包含（验证类型，验证规则，错误提示）
         id:"R_userPhone",
@@ -124,5 +117,13 @@
     })
     var pwdArr = [$("#R_password"),$("#R_repeatPassword")],
         pwdPromptText = ["密码不能不填","你是逗比么？"];
+        
+        //表单提交
+    $("#R_submit").click(function(){
+        $("input[data-empty = 'true']").addClass("form_warning_prompt");
+        if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
+          $("#form").submit();
+    }
+    })
 </script>
 </html>
