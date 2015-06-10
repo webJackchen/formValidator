@@ -2,7 +2,7 @@
 // [插件名称] jQuery formValidator-简易版
 //----------------------------------------------------------------------------------------------------
 // [描    述] jQuery formValidator表单验证插件，它是基于jQuery类库，实现了js脚本于页面的分离。本插件内置模拟placeholder效果，
-// 调用方便，支持参数配置的思想，将错误提示信息放于输入框内，能比较完美的实现ajax请求。
+// 调用方便，采用参数配置的思想，将错误提示信息放于输入框内，内置身份证号码验证功能，能比较完美的实现ajax请求。
 //----------------------------------------------------------------------------------------------------
 // [作者网名] webkackchen（阿飞）
 // [邮    箱] webkackchen@163.com
@@ -19,7 +19,8 @@
             R_obj:false,        //欲重复密码框的实例化对象
             R_password:false,     //欲重复密码框的id
             focusFn:false,      //获取焦点时是否有要做的事情
-            isIdCar:false       //是否是身份证号码验证框
+            isIdCar:false,       //是否是身份证号码验证框
+            txtOutside:false    //错误提示是否放在输入框外
         };
         this.objArrId = function (arr,a){//查找匹配对象的Id
             var objArrLength = arr.length;
@@ -49,11 +50,15 @@
                 This.repeatObjsValue =  This.repeatObjs.val();
             }
             if("" == objValue || null == objValue){
-                if(This.settings.isPassword){
-                    _this.next().val("请输入"+This.settings.title).removeClass("form_error_prompt").attr("data-empty","true").show();
-                    _this.hide();
+                if(This.settings.txtOutside){
+                    txtoutside_empty(_this);
                 }else{
-                    _this.attr("data-empty","true").val("请输入"+This.settings.title).removeClass("form_success_prompt").removeClass("input_focus");
+                    if(This.settings.isPassword){
+                        _this.next().val("请输入"+This.settings.title).removeClass("form_error_prompt").attr("data-empty","true").show();
+                        _this.hide();
+                    }else{
+                        _this.attr("data-empty","true").val("请输入"+This.settings.title).removeClass("form_success_prompt").removeClass("input_focus");
+                    }
                 }
                 This.pass = false;
                 if(This.settings.failureFn){
@@ -61,50 +66,62 @@
                 }
             }else{
                 if(This.settings.repeatObj){//重复密码框
-                    if(This.settings.R_obj.pass && This.repeatObjsValue == objValue){
-                        _this.next().removeClass("form_error_prompt").removeAttr("data-empty").hide();
-                        _this.addClass("form_success_prompt").show();
-                        This.pass = true;
+                    if(This.settings.txtOutside){
+                        txtoutside_repeat(_this);
                     }else{
-                        _this.next().val(This.settings.objArr[ This.Index].text).addClass("form_error_prompt").removeAttr("data-empty").show();
-                        _this.removeClass("form_success_prompt").hide();
-                        This.pass = false;
-                        if(This.settings.failureFn){
-                            This.settings.failureFn();
+                        if(This.settings.R_obj.pass && This.repeatObjsValue == objValue){
+                            _this.next().removeClass("form_error_prompt").removeAttr("data-empty").hide();
+                            _this.addClass("form_success_prompt").show();
+                            This.pass = true;
+                        }else{
+                            _this.next().val(This.settings.objArr[ This.Index].text).addClass("form_error_prompt").removeAttr("data-empty").show();
+                            _this.removeClass("form_success_prompt").hide();
+                            This.pass = false;
+                            if(This.settings.failureFn){
+                                This.settings.failureFn();
+                            }
                         }
                     }
                 }else if(This.settings.isIdCar){//是否是身份证框
                     var isIdCarPass = This.idCardValidate(This.settings.id);
-                    if(isIdCarPass){
-                        _this.removeClass("form_error_prompt").addClass("form_success_prompt").removeAttr("data-empty");
-                        This.pass = true;
-                        if(This.settings.successFn){
-                            This.settings.successFn();
-                        }
+                    if(This.settings.txtOutside){
+                        txtoutside_isIdCar(_this,isIdCarPass);
                     }else{
-                        _this.val(This.settings.objArr[ This.Index].text).removeClass("form_success_prompt").removeClass("input_focus").addClass("form_error_prompt").removeAttr("data-empty");
-                        This.pass = false;
-                        if(This.settings.failureFn){
-                            This.settings.failureFn();
+                        if(isIdCarPass){
+                            _this.removeClass("form_error_prompt").addClass("form_success_prompt").removeAttr("data-empty");
+                            This.pass = true;
+                            if(This.settings.successFn){
+                                This.settings.successFn();
+                            }
+                        }else{
+                            _this.val(This.settings.objArr[ This.Index].text).removeClass("form_success_prompt").removeClass("input_focus").addClass("form_error_prompt").removeAttr("data-empty");
+                            This.pass = false;
+                            if(This.settings.failureFn){
+                                This.settings.failureFn();
+                            }
                         }
                     }
                 }else{
-                    if(RegExp(This.reg).test(objValue)){
-                        _this.removeClass("form_error_prompt").addClass("form_success_prompt").removeAttr("data-empty");
-                        This.pass = true;
-                        if(This.settings.successFn){
-                            This.settings.successFn();
-                        }
+                    if(This.settings.txtOutside){
+                        txtoutside_reg(_this);
                     }else{
-                        if(This.settings.isPassword){
-                            _this.next().val(This.settings.objArr[ This.Index].text).addClass("form_error_prompt").removeAttr("data-empty").show();
-                            _this.removeClass("form_success_prompt").hide();
+                        if(RegExp(This.reg).test(objValue)){
+                            _this.removeClass("form_error_prompt").addClass("form_success_prompt").removeAttr("data-empty");
+                            This.pass = true;
+                            if(This.settings.successFn){
+                                This.settings.successFn();
+                            }
                         }else{
-                            _this.val(This.settings.objArr[ This.Index].text).removeClass("form_success_prompt").removeClass("input_focus").addClass("form_error_prompt").removeAttr("data-empty");
-                        }
-                        This.pass = false;
-                        if(This.settings.failureFn){
-                            This.settings.failureFn();
+                            if(This.settings.isPassword){
+                                _this.next().val(This.settings.objArr[ This.Index].text).addClass("form_error_prompt").removeAttr("data-empty").show();
+                                _this.removeClass("form_success_prompt").hide();
+                            }else{
+                                _this.val(This.settings.objArr[ This.Index].text).removeClass("form_success_prompt").removeClass("input_focus").addClass("form_error_prompt").removeAttr("data-empty");
+                            }
+                            This.pass = false;
+                            if(This.settings.failureFn){
+                                This.settings.failureFn();
+                            }
                         }
                     }
                 }
@@ -125,6 +142,101 @@
                 _This.val("");
             }
         });
+
+        function txtoutside_empty(obj){
+            var val_errTxt = obj.next(".val_errTxt");
+            var val_errTxt_pwd = obj.next().next(".val_errTxt");
+            if(This.settings.isPassword){
+                obj.next().val("请输入"+This.settings.title).show();
+                val_errTxt_pwd.html("*请输入"+This.settings.title);
+                obj.hide();
+            }else{
+                obj.attr("data-empty","true").val("请输入"+This.settings.title).removeClass("input_focus");
+                val_errTxt.html("*请输入"+This.settings.title);
+            }
+        }
+        function txtoutside_repeat(obj){
+            var objValue = obj.val(),
+                val_errTxt_pwd = obj.next().next(".val_errTxt"),
+                val_suc_pwd = val_errTxt_pwd.next(".val_suc");
+            if(This.settings.R_obj.pass && This.repeatObjsValue == objValue){
+                obj.next().removeAttr("data-empty").hide();
+                val_errTxt_pwd.html("");
+                val_suc_pwd.css("display","inline-block");
+                obj.show();
+                This.pass = true;
+            }else{
+                obj.next().val("请输入"+This.settings.title).show();
+                val_suc_pwd.css("display","none");
+                val_errTxt_pwd.html("*"+This.settings.objArr[ This.Index].text);
+                obj.hide();
+                This.pass = false;
+                if(This.settings.failureFn){
+                    This.settings.failureFn();
+                }
+            }
+        }
+        function txtoutside_isIdCar(obj,isIdCarPass){
+            var objValue = obj.val(),
+                val_errTxt = obj.next(".val_errTxt"),
+                val_suc = val_errTxt.next(".val_suc");
+            if(isIdCarPass){
+                obj.removeAttr("data-empty");
+                val_errTxt.html("");
+                val_suc.css("display","inline-block");
+                This.pass = true;
+                if(This.settings.successFn){
+                    This.settings.successFn();
+                }
+            }else{
+                obj.removeClass("input_focus").removeAttr("data-empty");
+                val_suc.css("display","none");
+                val_errTxt.html("*"+This.settings.objArr[ This.Index].text);
+                This.pass = false;
+                if(This.settings.failureFn){
+                    This.settings.failureFn();
+                }
+            }
+        }
+        function txtoutside_reg(obj){
+            var objValue = obj.val(),
+                val_errTxt = obj.next(".val_errTxt"),
+                val_suc = val_errTxt.next(".val_suc"),
+                val_errTxt_pwd = obj.next().next(".val_errTxt"),
+                val_suc_pwd = val_errTxt_pwd.next(".val_suc");
+            if(RegExp(This.reg).test(objValue)){
+                obj.removeAttr("data-empty");
+                if(This.settings.isPassword){
+                    val_errTxt_pwd.html("");
+                    val_suc_pwd.css("display","inline-block");
+                }else{
+                    val_errTxt.html("");
+                    val_suc.css("display","inline-block");
+                }
+                This.pass = true;
+                if(This.settings.successFn){
+                    This.settings.successFn();
+                }
+            }else{
+                if(This.settings.isPassword){
+                    obj.next().val("请输入"+This.settings.title).removeAttr("data-empty").show();
+                    obj.hide();
+                    val_errTxt_pwd.html("*"+This.settings.objArr[ This.Index].text);
+                    val_suc_pwd.css("display","none");
+                }else{
+                    obj.removeClass("input_focus").removeAttr("data-empty");
+                    val_errTxt.html("*"+This.settings.objArr[ This.Index].text);
+                    val_suc.css("display","none");
+                }
+                This.pass = false;
+                if(This.settings.failureFn){
+                    This.settings.failureFn();
+                }
+            }
+        }
+
+
+
 
         /**
          * 身份证号码验证start

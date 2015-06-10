@@ -2,7 +2,7 @@
 /*所有输入框样式定义*/
 input{
     width: 310px;
-    height: 29px;
+    height: 20px;
     border-radius: 3px;
     padding: 11px 10px 10px;
     color: #999999;
@@ -41,4 +41,15 @@ input{
 .form_loading{
     background-image: url("img/loading.gif");
     background-position:95% center;
+}
+/*输入框外提示错误文字，及成功钩的样式*/
+.val_errTxt{font-size: 12px;color: #eb6100;}
+.val_suc{
+    display: none;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    background-image: url("img/icon.png");
+    background-position:0 -210px;
+    background-repeat: no-repeat;
 }

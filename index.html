@@ -9,30 +9,44 @@
 <form>
     <div>
         <input type="text" id="R_userPhone" data-empty="true" validation-type="电话号码" data-type="text"/>
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
     <div>
         <input type="text" id="R_verifyCode" data-empty="true" validation-type="短信验证码" data-type="text" />
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
     <div>
         <input type="text" id="card" data-empty="true" validation-type="身份证号码" data-type="text" />
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
     <div>
         <input id="R_password" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
         <input type="text" data-empty="true" value="请创建密码"/>
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
     <div>
         <input id="R_repeatPassword" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
         <input value="请确认密码" data-empty="true" type="text"/>
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
 
 
     <div>
         <input id="R_pay" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
         <input type="text" data-empty="true" value="请创建密码"/>
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
     <div>
         <input id="R_repeatpay" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
         <input value="请确认密码" data-empty="true" type="text"/>
+        <span class="val_errTxt"></span>
+        <span class="val_suc"></span>
     </div>
     <div>
         <input type="button" id="R_submit" value="确认注册" class="btn"/>
@@ -60,6 +74,7 @@
         id:"R_userPhone",
         title:"电话号码",
         objArr:objArr,
+        txtOutside:true,
         successFn:function(){alert("d1.pass = " + d1.pass);},
         failureFn:function(){alert("验证失败的回调，失败时触发。。。")}
     })
@@ -67,6 +82,7 @@
     d2.init({
         id:"R_verifyCode",
         title:"短信验证码",
+        txtOutside:true,
         objArr:objArr
     })
 
@@ -75,6 +91,7 @@
         id:"R_password",
         title:"登录密码",
         objArr:objArr,
+        txtOutside:true,
         isPassword:true
     })
     var d4 = new $.FormValidator();
@@ -82,6 +99,7 @@
         id:"R_repeatPassword",
         title:"重复登录密码",
         objArr:objArr,
+        txtOutside:true,
         isPassword:true,
         repeatObj:true,
         R_password:"R_password",
@@ -114,6 +132,7 @@
         id:"card",
         title:"身份证号",
         objArr:objArr,
+        txtOutside:true,
         isIdCar:true
     })
 
