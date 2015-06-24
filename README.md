@@ -9,7 +9,7 @@
 
 ######html
 
-#######<form id="form">
+######<form id="form">
 #######    <div>
 #######        <input type="text" id="R_userPhone" data-empty="true" validation-type="电话号码" data-type="text"/>
 #######    </div>
