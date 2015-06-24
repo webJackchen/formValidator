@@ -9,132 +9,132 @@
 
 ######html
 
-######&lt;form id="form"&gt;
-######    &lt;div&gt;
-######        &lt;input type="text" id="R_userPhone" data-empty="true" validation-type="电话号码" data-type="text"/&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input type="text" id="R_verifyCode" data-empty="true" validation-type="短信验证码" data-type="text" /&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input type="text" id="card" data-empty="true" validation-type="身份证号码" data-type="text" /&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input id="R_password" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
-######        &lt;input type="text" data-empty="true" value="请创建密码"/&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input id="R_repeatPassword" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
-######        &lt;input value="请确认密码" data-empty="true" type="text"/&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input id="R_pay" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
-######       &lt;input type="text" data-empty="true" value="请创建密码"/&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input id="R_repeatpay" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
-######        &lt;input value="请确认密码" data-empty="true" type="text"/&gt;
-######    &lt;/div&gt;
-######    &lt;div&gt;
-######        &lt;input type="button" id="R_submit" value="确认注册" class="btn"/&gt;
-######    &lt;/div&gt;
+######&lt;form&nbsp;id="form"&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;id="R_userPhone"&nbsp;data-empty="true"&nbsp;validation-type="电话号码"&nbsp;data-type="text"/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;id="R_verifyCode"&nbsp;data-empty="true"&nbsp;validation-type="短信验证码"&nbsp;data-type="text"&nbsp;/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;id="card"&nbsp;data-empty="true"&nbsp;validation-type="身份证号码"&nbsp;data-type="text"&nbsp;/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id="R_password"&nbsp;validation-type="密码"&nbsp;type="password"&nbsp;class="disNone"&nbsp;oncopy&nbsp;=&nbsp;"return&nbsp;false"&nbsp;onpaste="return&nbsp;false"&nbsp;/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;data-empty="true"&nbsp;value="请创建密码"/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id="R_repeatPassword"&nbsp;validation-type="重复密码"&nbsp;type="password"&nbsp;class="disNone"&nbsp;oncopy&nbsp;=&nbsp;"return&nbsp;false"&nbsp;onpaste="return&nbsp;false"&nbsp;/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;value="请确认密码"&nbsp;data-empty="true"&nbsp;type="text"/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id="R_pay"&nbsp;validation-type="密码"&nbsp;type="password"&nbsp;class="disNone"&nbsp;oncopy&nbsp;=&nbsp;"return&nbsp;false"&nbsp;onpaste="return&nbsp;false"&nbsp;/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;data-empty="true"&nbsp;value="请创建密码"/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;id="R_repeatpay"&nbsp;validation-type="重复密码"&nbsp;type="password"&nbsp;class="disNone"&nbsp;oncopy&nbsp;=&nbsp;"return&nbsp;false"&nbsp;onpaste="return&nbsp;false"&nbsp;/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;value="请确认密码"&nbsp;data-empty="true"&nbsp;type="text"/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="button"&nbsp;id="R_submit"&nbsp;value="确认注册"&nbsp;class="btn"/&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
 ######&lt;/form&gt;
 
 ######其中自定义属性解释：
 ######data-empty：对象是否无值，默认为true；验证成功后该属性自动移除
-######data-type：是否是type：text   类型
+######data-type：是否是type：text&nbsp;&nbsp;&nbsp;类型
 ######validation-type：验证规则采用类型
 
 
 ######js调用部分
-######&lt;script type="text/javascript" src="jquery-1.8.2.min.js"&gt;&lt;/script&gt;
-######&lt;script type="text/javascript" src="formValidator.js"&gt;&lt;/script&gt;
-######&lt;script type="text/javascript"&gt;
-######    var textInputArr = $("input[data-type ='text']"),InputArr = ["请输入手机号码","请输入验证码","请输入身份证号码"];
-######    var objArr=[
-######        {name:"电话号码",reg:"^(1)[0-9]{10}$",text:"您输入的手机号码有误"},
-######        {name:"短信验证码",reg:"^[\\d]{1,6}$",text:"验证码不正确"},
-######        {name:"密码",reg:"^[\\w]{6,16}$",text:"密码由6到16位的字母和数字组成"},
-######        {name:"身份证号码",reg:"^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$",text:"请输入有效的身份证号码"},
-######        {name:"重复密码",reg:"^[\\w]{6,16}$",text:"您两次输入的密码不一致"}
-######    ];
-######    $.placeHolder.txtPlaceHolder(textInputArr,InputArr);//文本框初始化数据
-######    $.placeHolder.pwdPlaceHolder([$("#R_password"),$("#R_repeatPassword"),$("#R_pay"),$("#R_repeatpay")]);//密码框初始化数据
+######&lt;script&nbsp;type="text/javascript"&nbsp;src="jquery-1.8.2.min.js"&gt;&lt;/script&gt;
+######&lt;script&nbsp;type="text/javascript"&nbsp;src="formValidator.js"&gt;&lt;/script&gt;
+######&lt;script&nbsp;type="text/javascript"&gt;
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;textInputArr&nbsp;=&nbsp;$("input[data-type&nbsp;='text']"),InputArr&nbsp;=&nbsp;["请输入手机号码","请输入验证码","请输入身份证号码"];
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;objArr=[
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name:"电话号码",reg:"^(1)[0-9]{10}$",text:"您输入的手机号码有误"},
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name:"短信验证码",reg:"^[\\d]{1,6}$",text:"验证码不正确"},
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name:"密码",reg:"^[\\w]{6,16}$",text:"密码由6到16位的字母和数字组成"},
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name:"身份证号码",reg:"^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$",text:"请输入有效的身份证号码"},
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name:"重复密码",reg:"^[\\w]{6,16}$",text:"您两次输入的密码不一致"}
+######&nbsp;&nbsp;&nbsp;&nbsp;];
+######&nbsp;&nbsp;&nbsp;&nbsp;$.placeHolder.txtPlaceHolder(textInputArr,InputArr);//文本框初始化数据
+######&nbsp;&nbsp;&nbsp;&nbsp;$.placeHolder.pwdPlaceHolder([$("#R_password"),$("#R_repeatPassword"),$("#R_pay"),$("#R_repeatpay")]);//密码框初始化数据
 
 
-######    var d1 = new $.FormValidator();
-######    d1.init({//必配参数：id-验证对象的id    title：验证对象的名称      objArr-里面包含（验证类型，验证规则，错误提示）
-######        id:"R_userPhone",
-######        title:"电话号码",
-######        objArr:objArr,
-######        successFn:function(){alert("d1.pass" + d1.pass);},
-######        failureFn:function(){alert("验证失败的回调，失败时触发。。。")}
-######    })
-######    var d2 = new $.FormValidator();
-######    d2.init({
-######        id:"R_verifyCode",
-######        title:"短信验证码",
-######        objArr:objArr
-######    })
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d1&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d1.init({//必配参数：id-验证对象的id&nbsp;&nbsp;&nbsp;&nbsp;title：验证对象的名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr-里面包含（验证类型，验证规则，错误提示）
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"R_userPhone",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"电话号码",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;successFn:function(){alert("d1.pass"&nbsp;+&nbsp;d1.pass);},
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;failureFn:function(){alert("验证失败的回调，失败时触发。。。")}
+######&nbsp;&nbsp;&nbsp;&nbsp;})
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d2&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d2.init({
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"R_verifyCode",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"短信验证码",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr
+######&nbsp;&nbsp;&nbsp;&nbsp;})
 
-######    var d3 = new $.FormValidator();
-######    d3.init({
-######        id:"R_password",
-######        title:"登录密码",
-######        objArr:objArr,
-######        isPassword:true
-######    })
-######    var d4 = new $.FormValidator();
-######    d4.init({
-######        id:"R_repeatPassword",
-######        title:"重复登录密码",
-######        objArr:objArr,
-######        isPassword:true,
-######        repeatObj:true,
-######        R_password:"R_password",
-######        R_obj:d3,
-######        successFn:function(){alert(8888);}
-######    })
-
-
-
-######    var d5 = new $.FormValidator();
-######    d5.init({
-######        id:"R_pay",
-######        title:"支付密码",
-######        objArr:objArr,
-######        isPassword:true
-######    })
-######    var d6 = new $.FormValidator();
-######    d6.init({
-######        id:"R_repeatpay",
-######        title:"重复支付密码",
-######        objArr:objArr,
-######        isPassword:true,
-######        repeatObj:true,
-######        R_password:"R_pay",
-######        R_obj:d5,
-######        successFn:function(){alert(8888);}
-######    })
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d3&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d3.init({
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"R_password",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"登录密码",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPassword:true
+######&nbsp;&nbsp;&nbsp;&nbsp;})
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d4&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d4.init({
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"R_repeatPassword",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"重复登录密码",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPassword:true,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeatObj:true,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R_password:"R_password",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R_obj:d3,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;successFn:function(){alert(8888);}
+######&nbsp;&nbsp;&nbsp;&nbsp;})
 
 
-######    var d7 = new $.FormValidator();
-######    d7.init({
-######        id:"card",
-######        title:"身份证号",
-######        objArr:objArr,
-######        isIdCar:true
-######    })
-    
-######    验证通过后对应的对象pass属性为true；
-######    提交数据时通过判断对应的表单对象的pass属性
-    
-    
-######    $("#R_submit").click(function(){
-######        $("input[data-empty = 'true']").addClass("form_warning_prompt");
-######        if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
-######          $("#form").submit();
-######        }
-######    })
 
-######    具体效果请看demo
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d5&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d5.init({
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"R_pay",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"支付密码",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPassword:true
+######&nbsp;&nbsp;&nbsp;&nbsp;})
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d6&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d6.init({
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"R_repeatpay",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"重复支付密码",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isPassword:true,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeatObj:true,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R_password:"R_pay",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R_obj:d5,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;successFn:function(){alert(8888);}
+######&nbsp;&nbsp;&nbsp;&nbsp;})
+
+
+######&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;d7&nbsp;=&nbsp;new&nbsp;$.FormValidator();
+######&nbsp;&nbsp;&nbsp;&nbsp;d7.init({
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:"card",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:"身份证号",
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objArr:objArr,
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isIdCar:true
+######&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;
+######&nbsp;&nbsp;&nbsp;&nbsp;验证通过后对应的对象pass属性为true；
+######&nbsp;&nbsp;&nbsp;&nbsp;提交数据时通过判断对应的表单对象的pass属性
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+######&nbsp;&nbsp;&nbsp;&nbsp;$("#R_submit").click(function(){
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("input[data-empty&nbsp;=&nbsp;'true']").addClass("form_warning_prompt");
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d1.pass&nbsp;&&&nbsp;d2.pass&nbsp;&&&nbsp;d3.pass&nbsp;&&&nbsp;d4.pass&nbsp;&&&nbsp;d5.pass&nbsp;&&&nbsp;d6.pass&nbsp;&&&nbsp;d7.pass){
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("#form").submit();
+######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+######&nbsp;&nbsp;&nbsp;&nbsp;})
+
+######&nbsp;&nbsp;    具体效果请看demo
