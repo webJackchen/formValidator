@@ -130,7 +130,7 @@ js调用部分
 &nbsp;&nbsp;&nbsp;&nbsp;提交数据时通过判断对应的表单对象的pass属性</br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;$("#R_submit").click(function(){</br>
+&nbsp;&nbsp;$("#R_submit").click(function(){</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("input[data-empty&nbsp;=&nbsp;'true']").addClass("form_warning_prompt");</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d1.pass&nbsp;&&&nbsp;d2.pass&nbsp;&&&nbsp;d3.pass&nbsp;&&&nbsp;d4.pass&nbsp;&&&nbsp;d5.pass&nbsp;&&&nbsp;d6.pass&nbsp;&&&nbsp;d7.pass){</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("#form").submit();</br>
