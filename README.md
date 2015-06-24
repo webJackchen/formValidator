@@ -9,36 +9,36 @@
 
 ######html
 
-######<form id="form">
-#######    <div>
-#######        <input type="text" id="R_userPhone" data-empty="true" validation-type="电话号码" data-type="text"/>
-#######    </div>
-#######    <div>
-#######        <input type="text" id="R_verifyCode" data-empty="true" validation-type="短信验证码" data-type="text" />
-#######    </div>
-#######    <div>
-#######        <input type="text" id="card" data-empty="true" validation-type="身份证号码" data-type="text" />
-#######    </div>
-#######    <div>
-#######        <input id="R_password" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
-#######        <input type="text" data-empty="true" value="请创建密码"/>
-#######    </div>
-#######    <div>
-#######        <input id="R_repeatPassword" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
-#######        <input value="请确认密码" data-empty="true" type="text"/>
-#######    </div>
-#######    <div>
-#######        <input id="R_pay" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
-#######       <input type="text" data-empty="true" value="请创建密码"/>
-#######    </div>
-#######    <div>
-#######        <input id="R_repeatpay" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" />
-#######        <input value="请确认密码" data-empty="true" type="text"/>
-#######    </div>
-#######    <div>
-#######        <input type="button" id="R_submit" value="确认注册" class="btn"/>
-#######    </div>
-#######</form>
+#######&lt;form id="form"&gt;
+#######    &lt;div&gt;
+#######        &lt;input type="text" id="R_userPhone" data-empty="true" validation-type="电话号码" data-type="text"/&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input type="text" id="R_verifyCode" data-empty="true" validation-type="短信验证码" data-type="text" /&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input type="text" id="card" data-empty="true" validation-type="身份证号码" data-type="text" /&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input id="R_password" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
+#######        &lt;input type="text" data-empty="true" value="请创建密码"/&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input id="R_repeatPassword" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
+#######        &lt;input value="请确认密码" data-empty="true" type="text"/&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input id="R_pay" validation-type="密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
+#######       &lt;input type="text" data-empty="true" value="请创建密码"/&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input id="R_repeatpay" validation-type="重复密码" type="password" class="disNone" oncopy = "return false" onpaste="return false" /&gt;
+#######        &lt;input value="请确认密码" data-empty="true" type="text"/&gt;
+#######    &lt;/div&gt;
+#######    &lt;div&gt;
+#######        &lt;input type="button" id="R_submit" value="确认注册" class="btn"/&gt;
+#######    &lt;/div&gt;
+#######&lt;/form&gt;
 
 #######其中自定义属性解释：
 #######data-empty：对象是否无值，默认为true；验证成功后该属性自动移除
@@ -47,9 +47,9 @@
 
 
 ######js调用部分
-#######<script type="text/javascript" src="jquery-1.8.2.min.js"></script>
-#######<script type="text/javascript" src="formValidator.js"></script>
-#######<script type="text/javascript">
+#######&lt;script type="text/javascript" src="jquery-1.8.2.min.js"&gt;&lt;/script&gt;
+#######&lt;script type="text/javascript" src="formValidator.js"&gt;&lt;/script&gt;
+#######&lt;script type="text/javascript"&gt;
 #######    var textInputArr = $("input[data-type ='text']"),InputArr = ["请输入手机号码","请输入验证码","请输入身份证号码"];
 #######    var objArr=[
 #######        {name:"电话号码",reg:"^(1)[0-9]{10}$",text:"您输入的手机号码有误"},
