@@ -1,11 +1,11 @@
 
 #### [插件名称] jQuery formValidator-简易版
-####[描    述] jQuery formValidator表单验证插件，它是基于jQuery类库，实现了js脚本于页面的分离。本插件内置模拟placeholde效果，调用方便，采用参数配置的思想，将错误提示信息放于输入框内。内置身份证号码验证规则，更改样式较方便灵活。
-####[作者网名] webjackchen（阿飞）
-####[邮    箱] webjackchen@163.com
-####[github 地址]https://github.com/webJackchen/formValidator
-####[QQ交流] 602071930
-#####[版 本 号] ver0.0.1
+######[描    述] jQuery formValidator表单验证插件，它是基于jQuery类库，实现了js脚本于页面的分离。本插件内置模拟placeholde效果，调用方便，采用参数配置的思想，将错误提示信息放于输入框内。内置身份证号码验证规则，更改样式较方便灵活。
+[作者网名] webjackchen（阿飞）</br>
+[邮    箱] webjackchen@163.com</br>
+[github 地址]https://github.com/webJackchen/formValidator</br>
+[QQ交流] 602071930</br>
+[版 本 号] ver0.0.1</br>
 
 ######html
 
@@ -128,9 +128,8 @@ js调用部分
 &nbsp;&nbsp;&nbsp;&nbsp;</br>
 &nbsp;&nbsp;&nbsp;&nbsp;验证通过后对应的对象pass属性为true；</br>
 &nbsp;&nbsp;&nbsp;&nbsp;提交数据时通过判断对应的表单对象的pass属性</br>
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;$("#R_submit").click(function(){</br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;$("#R_submit").click(function(){</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("input[data-empty&nbsp;=&nbsp;'true']").addClass("form_warning_prompt");</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d1.pass&nbsp;&&&nbsp;d2.pass&nbsp;&&&nbsp;d3.pass&nbsp;&&&nbsp;d4.pass&nbsp;&&&nbsp;d5.pass&nbsp;&&&nbsp;d6.pass&nbsp;&&&nbsp;d7.pass){</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$("#form").submit();</br>
