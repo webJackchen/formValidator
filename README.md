@@ -46,7 +46,7 @@ data-type：是否是type：text&nbsp;&nbsp;&nbsp;类型</br>
 validation-type：验证规则采用类型</br>
 
 
-js调用部分
+######js调用部分
 &lt;script&nbsp;type="text/javascript"&nbsp;src="jquery-1.8.2.min.js"&gt;&lt;/script&gt;</br>
 &lt;script&nbsp;type="text/javascript"&nbsp;src="formValidator.js"&gt;&lt;/script&gt;</br>
 &lt;script&nbsp;type="text/javascript"&gt;</br>
