@@ -136,4 +136,4 @@ validation-type：验证规则采用类型</br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>
 &nbsp;&nbsp;&nbsp;&nbsp;})</br>
 
-######&nbsp;&nbsp;    具体效果请看demo
+######&nbsp;&nbsp;    具体效果请看http://webjackchen.github.io/formValidator/
