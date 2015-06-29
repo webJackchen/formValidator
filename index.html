@@ -66,7 +66,8 @@
         {name:"重复密码",reg:"^[\\w]{6,16}$",text:"您两次输入的密码不一致"}
     ];
     $.placeHolder.txtPlaceHolder(textInputArr,InputArr);//文本框初始化数据
-    $.placeHolder.pwdPlaceHolder([$("#R_password"),$("#R_repeatPassword"),$("#R_pay"),$("#R_repeatpay")]);//密码框初始化数据
+    var pwd = $.placeHolder.pwdPlaceHolder([$("#R_password"),$("#R_repeatPassword"),$("#R_pay"),$("#R_repeatpay")]);//密码框初始化数据
+    pwd = null;  //删除外部引用，释放内存
 
 
     var d1 = new $.FormValidator();
@@ -143,6 +144,7 @@
         $("input[data-empty = 'true']").addClass("form_warning_prompt");
         if(d1.pass && d2.pass && d3.pass && d4.pass && d5.pass && d6.pass && d7.pass){
             $("#form").submit();
+            alert("提交成功");
         }
     })
 </script>
